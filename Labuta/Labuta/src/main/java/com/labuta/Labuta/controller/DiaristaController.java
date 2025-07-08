@@ -1,8 +1,13 @@
 package com.labuta.Labuta.controller;
 
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,12 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.labuta.Labuta.model.User;
 import com.labuta.Labuta.repository.UserRepository;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/diaristas")
@@ -25,10 +24,10 @@ public class DiaristaController {
     @Autowired
     private UserRepository userRepository;
 
-    // Construtor para permitir injeção de dependência manual (se necessário)
+    /** Construtor para permitir injeção de dependência manual (se necessário)
     public DiaristaController(UserRepository userRepository) {
         this.userRepository = userRepository;
-    }
+    } */
 
     // POST — Cadastrar nova diarista
     @PostMapping
